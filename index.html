@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Maison Ossane — Quiet tailoring, made in Colombo</title>
+  <meta name="description" content="Maison Ossane is a Colombo atelier making considered womenswear: soft linen tailoring, Sri Lankan handloom and silk, cut in small runs and delivered island-wide.">
+  <meta name="theme-color" content="#F7F3EC">
+
+  <!-- Flag JS + decide on the first-visit preloader before first paint (no flash, no CLS). -->
+  <script>
+    (function (d) {
+      var c = d.documentElement.classList, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false;
+      c.add('js');
+      try { seen = sessionStorage.getItem('lux.seen') === '1'; } catch (e) {}
+      if (!reduce && !seen) c.add('has-preloader');
+    })(document);
+  </script>
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Hero display face (Cormorant Garamond 400, latin subset) -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_v86KnTOig.woff2">
+
+  <!-- Hero image: art-directed per breakpoint, preloaded at high priority -->
+  <link rel="preload" as="image" fetchpriority="high" media="(max-width: 767px)"
+        imagesrcset="https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=640&h=800&q=70 640w, https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=828&h=1035&q=70 828w" imagesizes="100vw">
+  <link rel="preload" as="image" fetchpriority="high" media="(min-width: 768px)"
+        imagesrcset="https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=1280&h=720&q=70 1280w, https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=1920&h=1080&q=70 1920w, https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=2560&h=1440&q=70 2560w" imagesizes="100vw">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" fetchpriority="low" src="js/main.js"></script>
+  <!-- Modules are fetched in parallel but behind the CSS, hero photo and display font -->
+  <link rel="modulepreload" fetchpriority="low" href="js/products.js">
+  <link rel="modulepreload" fetchpriority="low" href="js/store.js">
+  <link rel="modulepreload" fetchpriority="low" href="js/render.js">
+  <link rel="modulepreload" fetchpriority="low" href="js/overlays.js">
+  <link rel="modulepreload" fetchpriority="low" href="js/search.js">
+  <link rel="modulepreload" fetchpriority="low" href="js/motion.js">
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.1A4.4 4.4 0 0 1 12 7.2a4.4 4.4 0 0 1 7.5 2.7C19.5 15.4 12 20 12 20Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 9h17M3.5 15h17"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-6h-5v6H4v-9.5Z"/></symbol>
+    <symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3.5v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3.5c.4 2.6 2.3 4.4 5 4.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4.5-2 1.3a10 10 0 0 0 5.7 5.7l1.3-2 4.5 1.5v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 4.5 5.5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6l-3.9.9Z"/><path d="M9.2 8.6c.2 2.6 3.6 6 6.2 6.2l.9-1.6-1.9-1-1 .8c-1-.4-2.2-1.6-2.6-2.6l.8-1-1-1.9-1.4.5Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1"/><path d="m4 6.5 8 6.5 8-6.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Preloader curtain (first visit per session only; skipped for reduced motion) -->
+  <div class="preloader" data-preloader aria-hidden="true">
+    <div class="preloader-panel"></div>
+    <div class="preloader-panel"></div>
+    <div class="preloader-mark">
+      <span class="preloader-word">Maison Ossane</span>
+      <span class="preloader-line"></span>
+    </div>
+  </div>
+
+  <div class="announcement" role="region" aria-label="Announcement">
+    <p>Complimentary island-wide delivery on orders over Rs 25,000 <span class="announcement-sep" aria-hidden="true">·</span> <span class="announcement-extra">Collection N°12 is here</span></p>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <div class="header-start">
+        <button class="icon-btn header-menu" type="button" data-open="menu-drawer" aria-controls="menu-drawer" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          <span class="visually-hidden">Open menu</span>
+        </button>
+        <nav class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#shop">New arrivals</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#lookbook">Lookbook</a></li>
+            <li><a href="#story">The atelier</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a class="wordmark" href="#top" aria-label="Maison Ossane — home">Ossane</a>
+
+      <div class="header-end">
+        <button class="icon-btn header-search" type="button" data-open="search-modal" aria-controls="search-modal" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <span class="visually-hidden">Search</span>
+        </button>
+        <button class="icon-btn header-wish" type="button" data-open="wishlist-drawer" aria-controls="wishlist-drawer" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span class="visually-hidden">Wishlist</span>
+          <span class="count" data-wish-count hidden>0</span>
+        </button>
+        <button class="icon-btn header-bag" type="button" data-open="cart-drawer" aria-controls="cart-drawer" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+          <span class="visually-hidden">Shopping bag</span>
+          <span class="count" data-cart-count hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media" data-hero-media>
+        <picture>
+          <source media="(min-width: 768px)" width="1920" height="1080" srcset="https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=1280&h=720&q=70 1280w, https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=1920&h=1080&q=70 1920w, https://images.unsplash.com/photo-1612731486606-2614b4d74921?auto=format&fit=crop&crop=faces,center&w=2560&h=1440&q=70 2560w" sizes="100vw">
+          <img src="https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=640&h=800&q=70" srcset="https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=640&h=800&q=70 640w, https://images.unsplash.com/photo-1788999423198-d53358fa9ae0?auto=format&fit=crop&crop=faces,center&w=828&h=1035&q=70 828w" sizes="100vw" width="640" height="800" fetchpriority="high" decoding="async" alt="Model in a tailored chocolate suit holding a black leather bag against a copper wall">
+        </picture>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <p class="eyebrow hero-eyebrow" data-hero-in>Collection N°12 — 2026</p>
+        <h1 class="hero-title" id="hero-title" data-split>The art of <em>quiet</em> tailoring</h1>
+        <p class="hero-lede" data-hero-in>Considered womenswear, cut in our Colombo atelier from Italian linen, Sri Lankan handloom and silk.</p>
+        <div class="hero-actions" data-hero-in>
+          <a class="btn btn-light" href="#shop" data-magnetic><span>Shop the collection</span></a>
+          <a class="link-arrow link-light" href="#lookbook">View the lookbook <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <span class="scroll-cue" aria-hidden="true"><span></span></span>
+    </section>
+
+    <!-- Values strip -->
+    <section class="values" aria-label="Our promise">
+      <ul class="values-list container" role="list">
+        <li>Cut &amp; finished in Colombo</li>
+        <li>Handloom from Sri Lankan weavers</li>
+        <li>Complimentary alterations</li>
+        <li>Private appointments</li>
+      </ul>
+    </section>
+
+    <!-- Curated collections -->
+    <section class="section collections" id="collections" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>Collections</p>
+            <h2 class="section-title" id="collections-title" data-split>Curated <em>collections</em></h2>
+          </div>
+          <p class="section-note" data-reveal>Three wardrobes for life in Sri Lanka and beyond — from the boardroom to the beach to the big day — made well enough to stay for a decade.</p>
+        </div>
+
+        <ul class="collections-grid" role="list">
+          <li class="collection collection--a">
+            <a class="collection-link" href="#shop" data-cursor="Explore">
+              <div class="media media--4x5" data-reveal="clip">
+                <img src="https://images.unsplash.com/photo-1772714601004-23b94ae3913d?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70" srcset="https://images.unsplash.com/photo-1772714601004-23b94ae3913d?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1772714601004-23b94ae3913d?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1772714601004-23b94ae3913d?auto=format&fit=crop&crop=faces,center&w=1200&h=1500&q=70 1200w" sizes="(min-width: 1024px) 52vw, 100vw" width="800" height="1000" loading="lazy" decoding="async" alt="Model in a sand-coloured suit seated on a white chair against a terracotta wall">
+              </div>
+              <div class="collection-caption" data-reveal>
+                <div>
+                  <h3 class="collection-name">The Tailoring Edit</h3>
+                  <p class="collection-sub">Linen-silk suiting for warm days</p>
+                </div>
+                <span class="collection-cta">Explore <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="collection collection--b">
+            <a class="collection-link" href="#shop" data-cursor="Explore">
+              <div class="media media--4x5" data-reveal="clip">
+                <img src="https://images.unsplash.com/photo-1779323539375-cd7191db7e81?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70" srcset="https://images.unsplash.com/photo-1779323539375-cd7191db7e81?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1779323539375-cd7191db7e81?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1779323539375-cd7191db7e81?auto=format&fit=crop&crop=faces,center&w=1200&h=1500&q=70 1200w" sizes="(min-width: 1024px) 34vw, 82vw" width="800" height="1000" loading="lazy" decoding="async" alt="Model in an ivory handloom two-piece on a Sri Lankan beach">
+              </div>
+              <div class="collection-caption" data-reveal>
+                <div>
+                  <h3 class="collection-name">Resort Whites</h3>
+                  <p class="collection-sub">Handloom cotton for island days</p>
+                </div>
+                <span class="collection-cta">Explore <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="collection collection--c">
+            <a class="collection-link" href="#shop" data-cursor="Explore">
+              <div class="media media--4x5" data-reveal="clip">
+                <img src="https://images.unsplash.com/photo-1782569179605-1459252d863c?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70" srcset="https://images.unsplash.com/photo-1782569179605-1459252d863c?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1782569179605-1459252d863c?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1782569179605-1459252d863c?auto=format&fit=crop&crop=faces,center&w=1200&h=1500&q=70 1200w" sizes="(min-width: 1024px) 34vw, 82vw" width="800" height="1000" loading="lazy" decoding="async" alt="Bride in an embellished ivory gown seated on a tree branch">
+              </div>
+              <div class="collection-caption" data-reveal>
+                <div>
+                  <h3 class="collection-name">Bridal &amp; Occasion</h3>
+                  <p class="collection-sub">Hand-embellished pieces for the big day</p>
+                </div>
+                <span class="collection-cta">Explore <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Lookbook: pinned horizontal scroll on desktop, swipe carousel on phone -->
+    <section class="lookbook" id="lookbook" aria-labelledby="lookbook-title" data-lookbook>
+      <div class="lookbook-sticky">
+        <div class="lookbook-intro">
+          <p class="eyebrow" data-reveal>Lookbook</p>
+          <h2 class="section-title" id="lookbook-title" data-split>Collection <em>N°12</em></h2>
+          <p class="lookbook-lede" data-reveal>Shot between Colombo and the south coast in the golden hour before the monsoon — softened tailoring, deep browns and handloom that moves with the heat.</p>
+        </div>
+        <div class="lookbook-viewport">
+        <div class="lookbook-track" data-lookbook-track tabindex="0" role="region" aria-label="Lookbook images, scroll sideways">
+          <figure class="look">
+            <div class="media media--3x4">
+              <img src="https://images.unsplash.com/photo-1779398969106-4f254e207c5d?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70" srcset="https://images.unsplash.com/photo-1779398969106-4f254e207c5d?auto=format&fit=crop&crop=faces,center&w=480&h=640&q=70 480w, https://images.unsplash.com/photo-1779398969106-4f254e207c5d?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70 800w, https://images.unsplash.com/photo-1779398969106-4f254e207c5d?auto=format&fit=crop&crop=faces,center&w=1200&h=1600&q=70 1200w" sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 78vw" width="800" height="1067" loading="lazy" decoding="async" alt="Black and white portrait of a model in a satin suit">
+            </div>
+            <figcaption><span>Look 01</span> Satin suiting in onyx</figcaption>
+          </figure>
+          <figure class="look look--low">
+            <div class="media media--3x4">
+              <img src="https://images.unsplash.com/photo-1763551229890-64e97d845251?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70" srcset="https://images.unsplash.com/photo-1763551229890-64e97d845251?auto=format&fit=crop&crop=faces,center&w=480&h=640&q=70 480w, https://images.unsplash.com/photo-1763551229890-64e97d845251?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70 800w, https://images.unsplash.com/photo-1763551229890-64e97d845251?auto=format&fit=crop&crop=faces,center&w=1200&h=1600&q=70 1200w" sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 78vw" width="800" height="1067" loading="lazy" decoding="async" alt="Model posing in a long cocoa jersey dress">
+            </div>
+            <figcaption><span>Look 02</span> Bias-cut jersey in cocoa</figcaption>
+          </figure>
+          <figure class="look">
+            <div class="media media--3x4">
+              <img src="https://images.unsplash.com/photo-1677246791501-85875b1ab187?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70" srcset="https://images.unsplash.com/photo-1677246791501-85875b1ab187?auto=format&fit=crop&crop=faces,center&w=480&h=640&q=70 480w, https://images.unsplash.com/photo-1677246791501-85875b1ab187?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70 800w, https://images.unsplash.com/photo-1677246791501-85875b1ab187?auto=format&fit=crop&crop=faces,center&w=1200&h=1600&q=70 1200w" sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 78vw" width="800" height="1067" loading="lazy" decoding="async" alt="Model in a sharply cut black suit">
+            </div>
+            <figcaption><span>Look 03</span> Evening tuxedo, double-breasted</figcaption>
+          </figure>
+          <figure class="look look--low">
+            <div class="media media--3x4">
+              <img src="https://images.unsplash.com/photo-1779323539916-72069ef1b6c7?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70" srcset="https://images.unsplash.com/photo-1779323539916-72069ef1b6c7?auto=format&fit=crop&crop=faces,center&w=480&h=640&q=70 480w, https://images.unsplash.com/photo-1779323539916-72069ef1b6c7?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70 800w, https://images.unsplash.com/photo-1779323539916-72069ef1b6c7?auto=format&fit=crop&crop=faces,center&w=1200&h=1600&q=70 1200w" sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 78vw" width="800" height="1067" loading="lazy" decoding="async" alt="Model in an ivory two-piece seated on driftwood by the sea">
+            </div>
+            <figcaption><span>Look 04</span> Handloom two-piece in ivory</figcaption>
+          </figure>
+          <figure class="look">
+            <div class="media media--3x4">
+              <img src="https://images.unsplash.com/photo-1782485480913-132b2644a7bc?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70" srcset="https://images.unsplash.com/photo-1782485480913-132b2644a7bc?auto=format&fit=crop&crop=faces,center&w=480&h=640&q=70 480w, https://images.unsplash.com/photo-1782485480913-132b2644a7bc?auto=format&fit=crop&crop=faces,center&w=800&h=1067&q=70 800w, https://images.unsplash.com/photo-1782485480913-132b2644a7bc?auto=format&fit=crop&crop=faces,center&w=1200&h=1600&q=70 1200w" sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 78vw" width="800" height="1067" loading="lazy" decoding="async" alt="Model in a coral lace occasion set with traditional jewellery, holding red roses">
+            </div>
+            <figcaption><span>Look 05</span> Coral lace occasion set</figcaption>
+          </figure>
+        </div>
+        </div>
+        <div class="lookbook-progress" aria-hidden="true"><span data-lookbook-progress></span></div>
+      </div>
+    </section>
+
+    <!-- Product grid -->
+    <section class="section shop" id="shop" aria-labelledby="shop-title">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>The edit</p>
+            <h2 class="section-title" id="shop-title" data-split>New <em>arrivals</em></h2>
+          </div>
+          <p class="section-note" data-reveal>Eight pieces from Collection N°12, made in limited runs and finished by hand in Colombo.</p>
+        </div>
+        <ul class="product-grid" role="list" data-product-grid></ul>
+        <noscript><p class="section-note">Enable JavaScript to browse and shop the collection.</p></noscript>
+      </div>
+    </section>
+
+    <!-- Campaign statement -->
+    <section class="campaign" aria-labelledby="campaign-quote">
+      <div class="campaign-media" aria-hidden="true">
+        <div class="parallax-layer" data-parallax="0.16">
+          <img src="https://images.unsplash.com/photo-1770644935636-7105430e2e52?auto=format&fit=crop&crop=faces,center&w=1600&h=900&q=70" srcset="https://images.unsplash.com/photo-1770644935636-7105430e2e52?auto=format&fit=crop&crop=faces,center&w=960&h=540&q=70 960w, https://images.unsplash.com/photo-1770644935636-7105430e2e52?auto=format&fit=crop&crop=faces,center&w=1600&h=900&q=70 1600w, https://images.unsplash.com/photo-1770644935636-7105430e2e52?auto=format&fit=crop&crop=faces,center&w=2400&h=1350&q=70 2400w" sizes="100vw" width="1600" height="900" loading="lazy" decoding="async" alt="">
+        </div>
+      </div>
+      <div class="campaign-scrim" aria-hidden="true"></div>
+      <figure class="campaign-content container">
+        <blockquote>
+          <p class="campaign-quote" id="campaign-quote" data-split>“Clothes should be quiet enough to let <em>the woman</em> speak.”</p>
+        </blockquote>
+        <figcaption class="campaign-cite" data-reveal>Élise Ossane, founder</figcaption>
+      </figure>
+    </section>
+
+    <!-- Social feed -->
+    <section class="section social" id="social" aria-labelledby="social-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-reveal>As seen on Instagram &amp; TikTok</p>
+          <h2 class="section-title" id="social-title" data-split>Worn <em>in the world</em></h2>
+          <p class="social-handles" data-reveal>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="link-underline"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>@maisonossane</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="link-underline"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>@maisonossane</a>
+          </p>
+        </div>
+        <ul class="social-grid" role="list" data-reveal="stagger">
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram post 1 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1616065297556-f05bc00c9a3e?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1616065297556-f05bc00c9a3e?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1616065297556-f05bc00c9a3e?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Model in a black blazer"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram post 2 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1589363358751-ab05797e5629?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1589363358751-ab05797e5629?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1589363358751-ab05797e5629?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Metallic bag and rose gold watch resting on a beige trench coat"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="TikTok post 3 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1782568510094-f837c827c3db?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1782568510094-f837c827c3db?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1782568510094-f837c827c3db?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Portrait of a model in coral lace and traditional jewellery holding red roses"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram post 4 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1629511565591-a1d494ad6c58?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1629511565591-a1d494ad6c58?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1629511565591-a1d494ad6c58?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Model in a navy suit seated against a teal backdrop"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="TikTok post 5 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1623595289196-007a22dd8560?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1623595289196-007a22dd8560?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1623595289196-007a22dd8560?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Train tracks leading to the Lotus Tower in Colombo at golden hour"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
+          <li><a class="social-tile" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram post 6 (opens in a new tab)"><div class="media media--1x1"><img src="https://images.unsplash.com/photo-1779323539402-60cba8744104?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70" srcset="https://images.unsplash.com/photo-1779323539402-60cba8744104?auto=format&fit=crop&crop=faces,center&w=320&h=320&q=70 320w, https://images.unsplash.com/photo-1779323539402-60cba8744104?auto=format&fit=crop&crop=faces,center&w=640&h=640&q=70 640w" sizes="(min-width: 1024px) 16vw, (min-width: 768px) 33vw, 50vw" width="640" height="640" loading="lazy" decoding="async" alt="Model in ivory walking through the surf"></div><svg class="icon social-mark" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Brand story -->
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="container story-grid">
+        <div class="story-media media media--4x5" data-reveal="clip">
+          <div class="parallax-layer" data-parallax="0.12">
+            <img src="https://images.unsplash.com/photo-1536867520774-5b4f2628a69b?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70" srcset="https://images.unsplash.com/photo-1536867520774-5b4f2628a69b?auto=format&fit=crop&crop=faces,center&w=480&h=600&q=70 480w, https://images.unsplash.com/photo-1536867520774-5b4f2628a69b?auto=format&fit=crop&crop=faces,center&w=800&h=1000&q=70 800w, https://images.unsplash.com/photo-1536867520774-5b4f2628a69b?auto=format&fit=crop&crop=faces,center&w=1200&h=1500&q=70 1200w" sizes="(min-width: 1024px) 42vw, 100vw" width="800" height="1000" loading="lazy" decoding="async" alt="Tailor's tape measure and shears resting on a cutting table">
+          </div>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow" data-reveal>The atelier</p>
+          <h2 class="section-title" id="story-title" data-split>Made slowly, <em>worn for years</em></h2>
+          <p class="story-text" data-reveal>Maison Ossane began in Colombo in 2014 with one pattern-cutter, one table and a single jacket. Every piece is still drafted, cut and finished by hand in our Colombo 07 atelier.</p>
+          <p class="story-text story-text--muted" data-reveal>We work with handloom weavers across Sri Lanka and family-run mills in Italy, choose fibres we can trace, and make in small runs so nothing is wasted. Each garment carries the initials of the hands that made it.</p>
+          <dl class="stats" data-reveal="stagger">
+            <div class="stat"><dt>Years in the atelier</dt><dd>12</dd></div>
+            <div class="stat"><dt>Hours to make one jacket</dt><dd>48</dd></div>
+            <div class="stat"><dt>Natural, traceable fibres</dt><dd>100%</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container newsletter-inner">
+        <p class="eyebrow" data-reveal>Correspondence</p>
+        <h2 class="section-title" id="newsletter-title" data-split>Join the <em>list</em></h2>
+        <p class="newsletter-lede" data-reveal>Early access to new collections, invitations to private appointments and letters from the atelier — never more than twice a month.</p>
+        <form class="newsletter-form" data-newsletter novalidate data-reveal>
+          <label class="field-label" for="newsletter-email">Email address</label>
+          <div class="field-row">
+            <input class="field-input" id="newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="newsletter-msg">
+            <button class="btn btn-dark" type="submit" data-magnetic><span>Subscribe</span></button>
+          </div>
+          <p class="field-msg" id="newsletter-msg" role="status" aria-live="polite"></p>
+          <p class="field-note">By subscribing you agree to our <a href="#" class="inline-link">Privacy Policy</a>. Unsubscribe at any time.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <h2 class="footer-title" id="footer-title">Maison Ossane</h2>
+          <p>Quiet tailoring, made in Colombo since 2014.</p>
+          <p class="footer-address"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Atelier &amp; showroom, Colombo 07 — by appointment</p>
+        </div>
+        <nav class="footer-col" aria-label="Shop">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#shop">New arrivals</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#lookbook">Lookbook</a></li>
+            <li><a href="#story">The atelier</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Client care">
+          <h3>Client care</h3>
+          <ul>
+            <li><a href="#">Island-wide delivery</a></li>
+            <li><a href="#">Returns &amp; exchanges</a></li>
+            <li><a href="#">Size guide</a></li>
+            <li><a href="#">Garment care</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <address>
+            <ul>
+              <li><a href="tel:+94112345678"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>+94 11 234 5678</a></li>
+              <li><a href="https://wa.me/94112345678" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp concierge</a></li>
+              <li><a href="mailto:clientcare@maisonossane.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>clientcare@maisonossane.com</a></li>
+            </ul>
+          </address>
+          <div class="footer-social">
+            <a class="icon-btn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram @maisonossane (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a class="icon-btn" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok @maisonossane (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-wordmark" aria-hidden="true">Ossane</p>
+      <div class="footer-base">
+        <p>© <span data-year>2026</span> Maison Ossane (Pvt) Ltd. All rights reserved.</p>
+        <p class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile bottom dock -->
+  <nav class="dock" aria-label="Quick access">
+    <a class="dock-item" href="#top" data-dock="top"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></a>
+    <a class="dock-item" href="#shop" data-dock="shop"><svg class="icon" aria-hidden="true"><use href="#i-shop"/></svg><span>Shop</span></a>
+    <button class="dock-item" type="button" data-open="search-modal" aria-controls="search-modal" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span></button>
+    <button class="dock-item" type="button" data-open="wishlist-drawer" aria-controls="wishlist-drawer" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>Wishlist</span><span class="count" data-wish-count hidden>0</span></button>
+    <button class="dock-item" type="button" data-open="cart-drawer" aria-controls="cart-drawer" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span>Bag</span><span class="count" data-cart-count hidden>0</span></button>
+  </nav>
+
+  <!-- Overlays -->
+  <div class="scrim" data-scrim aria-hidden="true"></div>
+
+  <div class="drawer drawer--left" id="menu-drawer" role="dialog" aria-modal="true" aria-labelledby="menu-title" data-overlay>
+    <div class="drawer-head">
+      <h2 class="drawer-title" id="menu-title">Menu</h2>
+      <button class="icon-btn" type="button" data-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="visually-hidden">Close menu</span></button>
+    </div>
+    <nav class="menu-nav" aria-label="Mobile">
+      <ol>
+        <li style="--i:0"><a href="#shop" data-close>New arrivals</a></li>
+        <li style="--i:1"><a href="#collections" data-close>Collections</a></li>
+        <li style="--i:2"><a href="#lookbook" data-close>Lookbook</a></li>
+        <li style="--i:3"><a href="#story" data-close>The atelier</a></li>
+        <li style="--i:4"><a href="#newsletter" data-close>Correspondence</a></li>
+      </ol>
+    </nav>
+    <div class="menu-foot">
+      <p class="eyebrow">Client care</p>
+      <ul>
+        <li><a href="tel:+94112345678">+94 11 234 5678</a></li>
+        <li><a href="mailto:clientcare@maisonossane.com">clientcare@maisonossane.com</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">@maisonossane</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="drawer drawer--right" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" data-overlay>
+    <div class="drawer-head">
+      <h2 class="drawer-title" id="cart-title">Your bag <span class="drawer-count" data-cart-label></span></h2>
+      <button class="icon-btn" type="button" data-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="visually-hidden">Close bag</span></button>
+    </div>
+    <div class="undo-bar" data-undo-bar hidden>
+      <span data-undo-text></span>
+      <button class="text-btn" type="button" data-undo>Undo</button>
+    </div>
+    <div class="drawer-body" data-cart-body></div>
+    <div class="drawer-foot" data-cart-foot>
+      <div class="subtotal"><span>Subtotal</span><span data-cart-subtotal>—</span></div>
+      <p class="drawer-note">Complimentary island-wide delivery over Rs 25,000. International shipping calculated at checkout.</p>
+      <button class="btn btn-dark btn-block" type="button" data-checkout><span>Checkout</span></button>
+    </div>
+  </div>
+
+  <div class="drawer drawer--right" id="wishlist-drawer" role="dialog" aria-modal="true" aria-labelledby="wish-title" data-overlay>
+    <div class="drawer-head">
+      <h2 class="drawer-title" id="wish-title">Wishlist <span class="drawer-count" data-wish-label></span></h2>
+      <button class="icon-btn" type="button" data-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="visually-hidden">Close wishlist</span></button>
+    </div>
+    <div class="drawer-body" data-wish-body></div>
+  </div>
+
+  <div class="search" id="search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title" data-overlay>
+    <div class="search-panel">
+      <div class="container">
+        <div class="search-head">
+          <h2 class="visually-hidden" id="search-title">Search</h2>
+          <label class="field-label" for="search-input">Search the collection</label>
+          <button class="icon-btn" type="button" data-close><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="visually-hidden">Close search</span></button>
+        </div>
+        <div class="search-field">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input class="search-input" id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Linen, silk, tailoring…" aria-describedby="search-status">
+        </div>
+        <div class="search-suggest" data-search-suggest>
+          <p class="eyebrow">Suggestions</p>
+          <div class="chips" data-search-chips></div>
+        </div>
+        <p class="search-status" id="search-status" role="status" aria-live="polite" data-search-status></p>
+        <ul class="search-results" role="list" data-search-results></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <div class="cursor" aria-hidden="true" data-cursor-el><span class="cursor-label" data-cursor-label></span></div>
+</body>
+</html>
